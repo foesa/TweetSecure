@@ -1,0 +1,30 @@
+{
+
+    "manifest_version": 2,
+    "name": "Tweet Secure",
+    "version": "1.0",
+  
+    "description": "Encrypt all tweets on a users page. Only added users can decrypt tweets",
+  
+    "icons": {
+      "48": "icons/border-48.png"
+    },
+
+    "permissions":[
+        "activeTab"
+    ],
+
+    "browser_action": {
+        "default_icon": "icons/border-48.png",
+        "default_title":"TweetSecure",
+        "default_popup": "popup/secureTweets.html"
+    },
+  
+    "content_scripts": [
+      {
+        "matches": ["*://*.twitter.com/*"],
+        "js": ["borderify.js"]
+      }
+    ]
+  
+  }
